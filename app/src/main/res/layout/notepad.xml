@@ -32,10 +32,10 @@
                 android:textSize="20dp"
                 android:layout_marginBottom="10dp"/>
             <TextView
-                android:id="@+id/body"
+                android:id="@+id/timestamp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"/>
+                android:textSize="15dp"/>
         </LinearLayout>
     </LinearLayout>
     <View

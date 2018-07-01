@@ -40,11 +40,17 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
+
+import static java.text.DateFormat.getDateTimeInstance;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,RVAdapter.OnItemClicked {
@@ -210,6 +216,11 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    public String getCurrentTimeStamp() {
+        DateFormat DF = getDateTimeInstance(1,1,Locale.getDefault());
+        String date = DF.format(new Date());
+        return date;
+    }
     public void googleSignin(){
 
 
@@ -323,6 +334,7 @@ public class MainActivity extends AppCompatActivity
         } else if(requestCode==NEW_ENTRY_RQ_CODE){
             if (resultCode == RESULT_OK) {
                 String myData = data.getStringExtra("data");
+                myData=addTimestamp(myData);
                 if(getPreferences(MODE_PRIVATE).contains("LoginData")) {
                     myDBRef.child(UserID).push().setValue(myData);
                 }else{
@@ -337,6 +349,7 @@ public class MainActivity extends AppCompatActivity
         }else if(requestCode==EDIT_RQ_CODE) {
             if (resultCode == RESULT_OK) {
                 String intentData=data.getStringExtra("data");
+                intentData = addTimestamp(intentData);
                 try {
                     JSONObject JSONData=new JSONObject(intentData);
                     if(getPreferences(MODE_PRIVATE).contains("LoginData")) {
@@ -348,6 +361,15 @@ public class MainActivity extends AppCompatActivity
                 }catch (JSONException e){}
             }
         }
+    }
+
+    private String addTimestamp (String data){
+        try{
+            JSONObject JSONData=new JSONObject(data);
+            JSONData.put("timestamp",getCurrentTimeStamp());
+            return JSONData.toString();
+        }catch (JSONException e){}
+        return data;
     }
 
 }

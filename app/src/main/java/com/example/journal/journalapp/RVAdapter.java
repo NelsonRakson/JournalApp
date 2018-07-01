@@ -61,7 +61,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MainAdapterViewHol
         try{
             JSONObject notepad=new JSONObject(data.get(position));
             ((TextView) holder.itemView.findViewById(R.id.header)).setText(notepad.getString("header"));
-//            ((TextView) holder.itemView.findViewById(R.id.body)).setText(notepad.getString("body"));
+            ((TextView) holder.itemView.findViewById(R.id.timestamp)).setText(notepad.getString("timestamp"));
         }catch(JSONException e){}
     }
 

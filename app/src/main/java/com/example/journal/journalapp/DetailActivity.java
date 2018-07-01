@@ -46,6 +46,7 @@ public class DetailActivity extends AppCompatActivity {
                 actionBar.setTitle(JSONData.getString("header"));
                 ((TextView) findViewById(R.id.header)).setText(JSONData.getString("header"));
                 ((TextView) findViewById(R.id.body)).setText(JSONData.getString("body"));
+                ((TextView) findViewById(R.id.timestamp)).setText(JSONData.getString("timestamp"));
             }catch (JSONException e){
                 finish();
             }
