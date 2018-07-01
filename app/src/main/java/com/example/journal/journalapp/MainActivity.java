@@ -355,7 +355,7 @@ public class MainActivity extends AppCompatActivity
                     if(getPreferences(MODE_PRIVATE).contains("LoginData")) {
                         myDBRef.child(UserID).child(JSONData.getString("id")).setValue(intentData);
                     }
-                    mainAdapter.updateAt(data.getIntExtra("position", -1), data.getStringExtra("data"));
+                    mainAdapter.updateAt(data.getIntExtra("position", -1), intentData);
                     myToast.setText("Entry Updated");
                     myToast.show();
                 }catch (JSONException e){}
