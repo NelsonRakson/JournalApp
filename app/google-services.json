@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "220788443956",
+    "firebase_url": "https://journalappexample.firebaseio.com",
+    "project_id": "journalappexample",
+    "storage_bucket": "journalappexample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220788443956:android:647841346bb92c7d",
+        "android_client_info": {
+          "package_name": "com.example.journal.journalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220788443956-eis5ln5bqh0tht856058esc3lrl89qev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC03Eu0JqkGvI8lxvQKx_LQt7mUbzmJRRA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
